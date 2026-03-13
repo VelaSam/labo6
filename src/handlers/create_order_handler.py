@@ -34,7 +34,6 @@ class CreateOrderHandler(Handler):
                 text = response.json() 
                 self.logger.error(f"CreateOrder a échoué : {response.status_code} - {text}")
                 return OrderSagaState.END
-
         except Exception as e:
             self.logger.error("CreateOrder a échoué : " + str(e))
             return OrderSagaState.END
